@@ -1,0 +1,85 @@
+﻿@page "/RolesTableView"
+@rendermode InteractiveServer
+
+<h1>Rollen managen</h1>
+
+<!-- Dropdown with autocomplete for roles -->
+
+<!-- CREATE /READ /WRITE /DELETE -->
+
+<Table>
+    <TableHeader>
+        <TableRow>
+            <TableHeaderCell>Role</TableHeaderCell>
+            <TableHeaderCell>Create</TableHeaderCell>
+            <TableHeaderCell>Read</TableHeaderCell>
+            <TableHeaderCell>Write</TableHeaderCell>
+            <TableHeaderCell>Delete</TableHeaderCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableRowHeader>Microsoft 365</TableRowHeader>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+        </TableRow>
+        <TableRowGroup Title="Shares">
+            <TableRow>
+                <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;D-schijf</TableRowHeader>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            </TableRow>
+            <TableRowGroup Title="G-schijf">
+                <TableRow>
+                    <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finance</TableRowHeader>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                </TableRow>
+                <TableRow>
+                    <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Development</TableRowHeader>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                </TableRow>
+                <TableRow>
+                    <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service Counter</TableRowHeader>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                </TableRow>
+                <TableRow>
+                    <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DevOps</TableRowHeader>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                    <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                </TableRow>
+            </TableRowGroup>
+            <TableRow>
+                <TableRowHeader>&nbsp;&nbsp;&nbsp;&nbsp;H-schijf</TableRowHeader>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+                <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            </TableRow>
+        </TableRowGroup>
+        <TableRow>
+            <TableRowHeader>Azure AD</TableRowHeader>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+            <TableRowCell><Switch TValue="bool"></Switch></TableRowCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+@code{
+}

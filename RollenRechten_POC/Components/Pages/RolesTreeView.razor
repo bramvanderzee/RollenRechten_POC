@@ -1,0 +1,66 @@
+﻿@page "/RolesTreeView"
+@rendermode InteractiveServer
+@using Blazorise.TreeView
+
+<h1>Rollen managen</h1>
+
+<!-- Dropdown with autocomplete for roles -->
+
+<!-- READ /WRITE /DELETE -->
+
+<Button Color="Color.Primary" Clicked="@(()=>treeViewRef.ExpandAll())">Expand all</Button>
+<Button Color="Color.Secondary" Clicked="@(()=>treeViewRef.CollapseAll())">Collapse all</Button>
+
+<TreeView @ref="@treeViewRef" Nodes="Items"
+          GetChildNodes="@(item => item.Children)"
+          HasChildNodes="@(item => item.Children?.Any() == true)"
+          SelectionMode="TreeViewSelectionMode.Multiple"
+          @bind-SelectedNodes="selectedNodes"
+          @bind-ExpandedNodes="expandedNodes">
+    <NodeContent>
+        <Icon Name="@context.Icon" />
+        @context.Text
+    </NodeContent>
+</TreeView>
+
+@code {
+    TreeView<Item> treeViewRef;
+
+    // TODO make this work
+
+    public class Item
+    {
+        public string Text { get; set; }
+        public IconName Icon { get; set; }
+        public IEnumerable<Item> Children { get; set; }
+    }
+
+    IEnumerable<Item> Items = new[]
+    {
+        new Item { Text = "Microsoft 365", Icon = IconName.Inbox },
+        new Item
+        {
+            Text = "Shares",
+            Children = new []
+            {
+                new Item { Text = "D-schijf" },
+                new Item
+                {
+                    Text = "G-schijf",
+                    Children = new []
+                    {
+                        new Item { Text = "Development", Icon = IconName.FolderOpen },
+                        new Item { Text = "Finance", Icon = IconName.FolderOpen },
+                        new Item { Text = "Service Counter", Icon = IconName.FolderOpen },
+                        new Item { Text = "DevOps", Icon = IconName.FolderOpen }
+                    }
+                },
+                new Item { Text = "H-schijf" },
+            }
+        },
+        new Item { Text = "Azure AD", Icon = IconName.Desktop },
+    };
+
+    IList<Item> expandedNodes = new List<Item>();
+    IList<Item> selectedNodes = new List<Item>();
+}

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RollenRechten_POC.Models.Role">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RightsGroups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RollenRechten_POC.Models.RightsGroup">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAgAAAAAAABAQAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Models\RightsGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Rights" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RollenRechten_POC.Models.Right">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQgAAEAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Right.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

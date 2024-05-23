@@ -1,0 +1,65 @@
+﻿@page "/RolesDataGridView"
+@rendermode InteractiveServer
+
+<h1>Rollen managen</h1>
+
+<!-- Dropdown with autocomplete for roles -->
+
+<!-- CREATE /READ /WRITE /DELETE -->
+
+<DataGrid TItem="Item"
+    Data="Items"
+    Responsive
+    ShowPager
+    Groupable
+    ShowPageSizes>
+    <DataGridColumns>
+        <DataGridColumn TItem="Item" Field="@nameof(Item.Text)" Caption="Right" />
+        <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Create)" Caption="Create" Editable />
+        <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Read)" Caption="Read" Editable />
+        <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Write)" Caption="Write" Editable />
+        <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Delete)" Caption="Delete" Editable />
+    </DataGridColumns>
+</DataGrid>
+
+
+@code{
+    // https://blazorise.com/docs/extensions/datagrid/features/auto-generate-columns
+
+    public class Item
+    {
+        public string Text { get; set; }
+        public IEnumerable<Item>? Children { get; set; }
+        public IconName Icon = IconName.Folder;
+        public bool Create { get; set; }
+        public bool Read { get; set; }
+        public bool Write { get; set; }
+        public bool Delete { get; set; }
+    }
+
+    IEnumerable<Item> Items = new[]
+    {
+        new Item { Text = "Microsoft 365", Icon = IconName.Inbox },
+        new Item
+        {
+            Text = "Shares",
+            Children = new []
+            {
+                new Item { Text = "D-schijf" },
+                new Item
+                {
+                    Text = "G-schijf",
+                    Children = new []
+                    {
+                        new Item { Text = "Development", Icon = IconName.FolderOpen },
+                        new Item { Text = "Finance", Icon = IconName.FolderOpen },
+                        new Item { Text = "Service Counter", Icon = IconName.FolderOpen },
+                        new Item { Text = "DevOps", Icon = IconName.FolderOpen }
+                    }
+                },
+                new Item { Text = "H-schijf" },
+            }
+        },
+        new Item { Text = "Azure AD", Icon = IconName.Desktop },
+    };
+}
