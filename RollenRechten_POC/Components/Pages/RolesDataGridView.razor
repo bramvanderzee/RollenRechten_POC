@@ -16,6 +16,7 @@
     ShowPageSizes>
     <DataGridColumns>
         <DataGridColumn TItem="Item" Field="@nameof(Item.Text)" Caption="Right" />
+        <DataGridColumn TItem="Item"><Icon Name="@nameof(Item.Icon)"></Icon></DataGridColumn>
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Create)" Caption="Create" Editable />
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Read)" Caption="Read" Editable />
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Write)" Caption="Write" Editable />
