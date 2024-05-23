@@ -12,6 +12,7 @@
     Responsive
     ShowPager
     Groupable
+    Editable
     ShowPageSizes>
     <DataGridColumns>
         <DataGridColumn TItem="Item" Field="@nameof(Item.Text)" Caption="Right" />
@@ -19,6 +20,7 @@
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Read)" Caption="Read" Editable />
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Write)" Caption="Write" Editable />
         <DataGridCheckColumn TItem="Item" Field="@nameof(Item.Delete)" Caption="Delete" Editable />
+        <DataGridCommandColumn />
     </DataGridColumns>
 </DataGrid>
 
